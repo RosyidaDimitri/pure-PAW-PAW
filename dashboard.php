@@ -22,23 +22,23 @@ $totalScore = $assessment['total_score'] ?? 0;
 $totalAnswer = $assessment['total_answer'] ?? 0;
 
 if ($totalScore >= 80) {
-    $status = "Sangat Cocok";
-    $desc = "Kamu memiliki kecocokan tinggi untuk menjadi Backend Developer.";
+    $status = "Very suitable";
+    $desc = "You have a high suitability to be a Backend Developer.";
     $progress = 90;
     $level = "Advanced Beginner";
 } elseif ($totalScore >= 50) {
-    $status = "Cukup Cocok";
-    $desc = "Kamu cukup cocok, tetapi masih perlu memperkuat database, API, logic, dan server.";
+    $status = "Suitable enough";
+    $desc = "You are quite suitable, but still need to strengthen the database, API, logic, and server.";
     $progress = 65;
     $level = "Growing Learner";
 } elseif ($totalAnswer > 0) {
-    $status = "Kurang Cocok";
-    $desc = "Kamu masih perlu memperkuat dasar pemrograman backend dari awal.";
+    $status = "Not suitable";
+    $desc = "You still need to strengthen the basics of backend programming from the beginning.";
     $progress = 35;
     $level = "Starter";
 } else {
-    $status = "Belum Mengisi Assessment";
-    $desc = "Mulai assessment untuk mengetahui kecocokanmu sebagai Backend Developer.";
+    $status = "Haven't filled out the assessment yet";
+    $desc = "Start the assessment to find out your suitability as a Backend Developer.";
     $progress = 0;
     $level = "Not Started";
 }
@@ -72,13 +72,14 @@ $today = date('l, F j, Y');
             <div class="brand-icon"><i class="bi bi-broadcast-pin"></i></div>
             <div>
                 <h2>Careon</h2>
-                <p>SOPHISTICATED CO-PILOT</p>
             </div>
         </div>
 
         <a class="side-link active" href="dashboard.php"><i class="bi bi-grid-fill"></i> Dashboard</a>
         <a class="side-link" href="assessment.php"><i class="bi bi-shield-check"></i> Career Readiness</a>
-        <a class="side-link" href="#"><i class="bi bi-map"></i> Roadmap</a>
+        <a class="side-link" href="roadmap.php">
+            <i class="bi bi-map"></i> Roadmap
+        </a>
         <a class="side-link" href="#"><i class="bi bi-graph-up-arrow"></i> Progress</a>
         <a class="side-link" href="profile.php"><i class="bi bi-person-circle"></i> Profile</a>
 
@@ -86,19 +87,6 @@ $today = date('l, F j, Y');
     </aside>
 
     <main class="main-content">
-
-        <div class="topbar">
-            <input type="text" placeholder="Search resources..." readonly>
-
-            <a href="profile.php" class="profile-pill">
-                <span><?= strtoupper(substr($displayName, 0, 2)); ?></span>
-                <div>
-                    <b><?= htmlspecialchars($firstName); ?></b>
-                    <small>View Profile</small>
-                </div>
-            </a>
-        </div>
-
         <div class="dashboard-top">
             <div>
                 <h1><?= $greeting ?>, <?= htmlspecialchars($firstName); ?>!</h1>
@@ -141,61 +129,59 @@ $today = date('l, F j, Y');
         </div>
 
         <div class="dashboard-grid">
+
             <div class="card-careon assessment-result-card">
-                <div class="card-body text-center py-5">
-                    <div class="result-emoji">🎯</div>
-                    <p class="mini-label">Backend Developer Readiness</p>
-                    <h2><?= $status ?></h2>
-                    <p class="result-desc"><?= $desc ?></p>
+                <div class="card-body result-content">
+                    <div class="result-header-row">
+                        <div>
+                            <p class="mini-label" style="color:rgba(255,255,255,0.68);">
+                                Backend Developer Readiness
+                            </p>
 
-                    <div class="progress-wrap">
-                        <div class="progress-info">
-                            <span>Readiness Progress</span>
-                            <b><?= $progress ?>%</b>
-                        </div>
+                            <h2 style="color:white;">
+                                <?= $status ?>
+                            </h2>
 
-                        <div class="progress-careon">
-                            <div class="progress-fill red" style="width: <?= $progress ?>%;"></div>
+                            <p class="result-desc" style="color:rgba(255,255,255,0.88);">
+                                <?= $desc ?>
+                            </p>
                         </div>
                     </div>
 
-                    <div class="level-box">
-                        Current Level: <b><?= $level ?></b>
+                    <div class="result-footer-row">
+                        <div class="level-box">
+                            Current Level: <b><?= $level ?></b>
+                        </div>
+
+                        <a href="interest.php" class="btn-careon-primary">
+                            Retake Assessment
+                        </a>
                     </div>
-
-                    <br>
-
-                    <a href="assessment.php" class="btn-careon-primary">
-                        <?= $totalAnswer > 0 ? 'Retake Assessment' : 'Start Assessment' ?>
-                    </a>
                 </div>
             </div>
 
-            <div>
-                <div class="card-careon mb-3">
-                    <div class="card-body">
-                        <div class="section-title mb-3">Recommended Next Steps</div>
+            <div class="card-careon mb-3">
+                <div class="card-body">
+                    <div class="section-title mb-3">Recommended Next Steps</div>
 
-                        <?php if ($totalAnswer == 0): ?>
-                            <div class="empty-state">
-                                <i class="bi bi-clipboard-check"></i>
-                                <p>Belum ada hasil assessment.</p>
-                                <a href="assessment.php" class="btn-careon-primary btn-careon-sm">Start Now</a>
-                            </div>
-                        <?php else: ?>
-                            <div class="next-step-list">
-                                <div class="next-step-item">Pelajari dasar SQL dan relasi tabel</div>
-                                <div class="next-step-item">Latihan CRUD dengan PHP Native</div>
-                                <div class="next-step-item">Pahami login, session, dan password hash</div>
-                                <div class="next-step-item">Coba buat API sederhana</div>
-                            </div>
-                        <?php endif; ?>
-                    </div>
-                </div>
+                    <?php if ($totalAnswer == 0): ?>
+                        <div class="empty-state">
+                            <i class="bi bi-clipboard-check"></i>
+                            <p>No assessment result yet.</p>
+                            <a href="interest.php" class="btn-careon-primary btn-careon-sm">Start Now</a>
+                        </div>
+                    <?php else: ?>
+                        <div class="next-step-list">
+                            <div class="next-step-item">Practice CRUD using PHP Native</div>
+                            <div class="next-step-item">Learn SQL JOIN & Relationships</div>
+                            <div class="next-step-item">Build Login & Authentication System</div>
+                            <div class="next-step-item">Try building your first REST API</div>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
+
         </div>
-
     </main>
 
 </div>

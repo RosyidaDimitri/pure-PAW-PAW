@@ -75,7 +75,6 @@ if ($displayName == '') {
             <div class="brand-icon"><i class="bi bi-broadcast-pin"></i></div>
             <div>
                 <h2>Careon</h2>
-                <p>SOPHISTICATED CO-PILOT</p>
             </div>
         </div>
 
@@ -113,7 +112,7 @@ if ($displayName == '') {
 
             <div class="profile-form-card">
                 <h1>Edit Profile</h1>
-                <p class="form-subtitle">Lengkapi data profil Careon kamu</p>
+                <p class="form-subtitle">Complete your Careon profile data</p>
 
                 <?php if ($message): ?>
                     <div class="success-alert"><?= $message; ?></div>
@@ -123,13 +122,13 @@ if ($displayName == '') {
 
                     <div class="form-row">
                         <div class="form-group-careon">
-                            <label>Nama Depan</label>
+                            <label>First name</label>
                             <input type="text" name="first_name" placeholder="Naila"
                                    value="<?= htmlspecialchars($firstName); ?>">
                         </div>
 
                         <div class="form-group-careon">
-                            <label>Nama Belakang</label>
+                            <label>Last Name</label>
                             <input type="text" name="last_name" placeholder="Amelia"
                                    value="<?= htmlspecialchars($lastName); ?>">
                         </div>
@@ -144,9 +143,9 @@ if ($displayName == '') {
                     <div class="form-group-careon">
                         <label>Status</label>
                         <select name="status">
-                            <option value="">Pilih status kamu</option>
-                            <option value="Mahasiswa" <?= ($user['status'] ?? '') == 'Mahasiswa' ? 'selected' : ''; ?>>Mahasiswa</option>
-                            <option value="Siswa SMA/SMK" <?= ($user['status'] ?? '') == 'Siswa SMA/SMK' ? 'selected' : ''; ?>>Siswa SMA/SMK</option>
+                            <option value="">Choose your status</option>
+                            <option value="College Student" <?= ($user['status'] ?? '') == 'College Student' ? 'selected' : ''; ?>>College Student</option>
+                            <option value="High school students" <?= ($user['status'] ?? '') == 'High school students' ? 'selected' : ''; ?>>High school students</option>
                             <option value="Fresh Graduate" <?= ($user['status'] ?? '') == 'Fresh Graduate' ? 'selected' : ''; ?>>Fresh Graduate</option>
                             <option value="Career Switcher" <?= ($user['status'] ?? '') == 'Career Switcher' ? 'selected' : ''; ?>>Career Switcher</option>
                         </select>

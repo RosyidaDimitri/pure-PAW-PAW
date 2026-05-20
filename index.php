@@ -24,36 +24,38 @@
 
 <section class="hero-section">
     <div class="hero-content">
-        <div class="hero-tag">Backend Career Assessment</div>
-        <h1 class="hero-title">Discover Your Backend Developer Readiness</h1>
-        <p class="hero-desc">Careon membantu kamu mengecek kecocokan awal sebagai Backend Developer melalui asesmen singkat berbasis 10 pertanyaan.</p>
+        <div class="hero-tag">CAREER DEVELOPMENT PLATFORM</div>
+        <h1 class="hero-title">
+            Your Personalized <br>
+            Career Companion
+        </h1>
+        <p class="hero-desc">Discover your skills, build your career, and let Careon be your side. Navigate your professional journey with precision and mentorship.</p>
         <div class="d-flex gap-3 flex-wrap">
-            <a href="register.php" class="btn-careon-primary" style="padding:13px 28px;font-size:15px;">Mulai Asesmen</a>
-            <a href="login.php" class="btn-careon-outline" style="padding:13px 28px;font-size:15px;color:white;border-color:rgba(255,255,255,0.35);">Login</a>
+            <a href="login.php" class="btn-careon-outline" style="padding:13px 28px;font-size:15px;color:white;border-color:rgba(255,255,255,0.35);">Start for Free</a>
         </div>
     </div>
     <div class="hero-visual" style="padding:0;overflow:hidden;">
-        <img src="images/career_planning.jpg" alt="Career Planning" style="width:100%;height:100%;object-fit:cover;object-position:center;border-radius:16px;opacity:0.88;">
+        <img src="images/career_planning.jpg" alt="Career Planning"style="width:100%;height:100%;object-fit:cover;object-position:center 70%;border-radius:16px;opacity:0.88;">
     </div>
 </section>
 
 <section class="why-section" id="features">
     <div class="text-center mb-5">
-        <p style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--red);margin-bottom:8px;">Simple Demo Flow</p>
+        <p style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--red);margin-bottom:8px;">Career Journey Flow</p>
         <h2 class="why-title">Why Careon?</h2>
-        <p class="why-subtitle">Alur demo dibuat sederhana: register, login, asesmen, lalu hasil langsung tampil.</p>
+        <p class="why-subtitle">Everything you need to plan, grow, and land your dream career.</p>
     </div>
     <div class="row g-4">
-        <div class="col-md-4"><div class="feature-card"><div class="feature-title">Register User</div><p class="feature-desc">User baru bisa dibuat langsung saat presentasi.</p></div></div>
-        <div class="col-md-4"><div class="feature-card"><div class="feature-title">10 Questions</div><p class="feature-desc">Soal sudah tersedia dari database MySQL.</p></div></div>
-        <div class="col-md-4"><div class="feature-card"><div class="feature-title">Dynamic Result</div><p class="feature-desc">Hasil dashboard berubah sesuai jawaban terbaru.</p></div></div>
+        <div class="col-md-4"><div class="feature-card"><div class="feature-title">Smart Asassment</div><p class="feature-desc">Our system analyzes your strengths, personality, and market demand to recommend the perfect career path for you.</p></div></div>
+        <div class="col-md-4"><div class="feature-card"><div class="feature-title">Personal Roadmap</div><p class="feature-desc">Step-by-step learning roadmap with checkpoints, projects, and milestones designed specificially for your goals.</p></div></div>
+        <div class="col-md-4"><div class="feature-card"><div class="feature-title">Dynamic Result</div><p class="feature-desc">The dashboard results change according to the latest answers.</p></div></div>
     </div>
 </section>
 
 <section id="about" style="background:var(--cream);padding:72px 48px;text-align:center;">
     <p style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--red);">Careon Prototype</p>
-    <h2 class="why-title" style="font-size:28px;">Prototype asesmen karir berbasis PHP Native dan MySQL</h2>
-    <p style="color:var(--gray-600);max-width:650px;margin:12px auto 0;">Versi ini difokuskan untuk pengujian end-to-end tanpa fitur tambahan yang kompleks.</p>
+    <h2 class="why-title" style="font-size:28px;">Bridging the gap between career dreams and innovation</h2>
+    <p style="color:var(--gray-600);max-width:650px;margin:12px auto 0;">Careon helps students explore career paths, measure their readiness, and build structured learning journeys through assessments and personalized roadmaps.</p>
 </section>
 </body>
 </html>

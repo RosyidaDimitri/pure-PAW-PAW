@@ -640,10 +640,11 @@ body.app-layout {
     display: flex;
     align-items: center;
     gap: 16px;
+    min-height: 92px;
 }
 
 .stat-icon {
-    width: 48px; height: 48px;
+    width: 50px; height: 50px;
     border-radius: 12px;
     display: flex; align-items: center; justify-content: center;
     font-size: 20px;
@@ -671,6 +672,7 @@ body.app-layout {
     font-weight: 700;
     color: var(--navy);
     line-height: 1;
+    margin-top: 2px;
 }
 
 .stat-sub { font-size: 11.5px; color: var(--gray-500); margin-top: 3px; }
@@ -1600,6 +1602,15 @@ body.landing-layout {
     gap: 48px;
 }
 
+.hero-title{
+    font-family: var(--font-display);
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 1.05;
+    color: white;
+    margin-bottom: 24px;
+}
+
 .hero-content { flex: 1; color: white; }
 .hero-tag {
     display: inline-block;
@@ -1925,7 +1936,7 @@ body.landing-layout {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 18px;
-    margin: 28px 0;
+    margin: 24px 0;
 }
 
 .stat-card {
@@ -2060,6 +2071,7 @@ body.landing-layout {
     }
 
     .main-content {
+        padding-top: 42px;
         margin-left: 0;
         width: 100%;
     }
@@ -2075,7 +2087,7 @@ body.landing-layout {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 28px;
+    margin-bottom: 0px;
 }
 
 .dashboard-top h1 {
@@ -2142,7 +2154,7 @@ body.landing-layout {
 
 .assessment-result-card h2 {
     font-family: var(--font-display);
-    color: var(--navy);
+    color: white;
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 10px;
@@ -2156,7 +2168,7 @@ body.landing-layout {
 .mini-label {
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--gray-500);
+    color: rgba(255,255,255,0.68);
     font-size: 12px;
     font-weight: 700;
     margin-bottom: 8px;
@@ -2164,9 +2176,10 @@ body.landing-layout {
 
 .result-desc {
     max-width: 580px;
-    margin: 0 auto 28px;
-    color: var(--gray-600);
+    margin: 0 0 28px;
+    color: rgba(255,255,255,0.88);
     line-height: 1.7;
+    text-align: left;
 }
 
 .progress-wrap {
@@ -2428,6 +2441,343 @@ body.landing-layout {
     }
 }
 
+.roadmap-hero {
+    padding: 36px;
+    margin-bottom: 28px;
+}
+
+.roadmap-badge {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.roadmap-hero h2 {
+    font-family: var(--font-display);
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+.roadmap-hero p {
+    color: var(--gray-600);
+    margin-bottom: 24px;
+}
+
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+}
+
+.roadmap-step {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.step-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.roadmap-step.done .step-icon {
+    color: #16A34A;
+}
+
+.roadmap-step.locked .step-icon {
+    color: var(--gray-400);
+}
+
+.roadmap-step h3 {
+    color: var(--navy);
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.roadmap-step p {
+    color: var(--gray-500);
+    font-size: 14px;
+    margin: 0;
+}
+
+.interest-page {
+    padding: 56px 64px;
+    background: var(--cream);
+    min-height: calc(100vh - 90px);
+}
+
+.interest-header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.interest-header p {
+    color: var(--red);
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.interest-header h1 {
+    font-family: var(--font-display);
+    color: var(--navy);
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.interest-header span {
+    color: var(--gray-500);
+    font-size: 15px;
+}
+
+.interest-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.interest-card {
+    background: white;
+    border-radius: 22px;
+    padding: 26px;
+    box-shadow: var(--shadow-sm);
+    border: 1.5px solid var(--gray-200);
+}
+
+.interest-card.active {
+    border: 2px solid var(--red);
+}
+
+.interest-card.disabled {
+    opacity: 0.75;
+}
+
+.interest-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: var(--cream);
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 18px;
+}
+
+.interest-card h3 {
+    color: var(--navy);
+    font-family: var(--font-display);
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.interest-card p {
+    color: var(--gray-500);
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.specialization-box {
+    margin-top: 22px;
+}
+
+.specialization-box h4 {
+    color: var(--navy);
+    margin-bottom: 12px;
+}
+
+.specialization-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-radius: 14px;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.specialization-item.available {
+    background: var(--navy);
+    color: white;
+}
+
+.specialization-item.locked {
+    background: var(--gray-100);
+    color: var(--gray-500);
+}
+
+.specialization-item b {
+    display: block;
+    font-size: 14px;
+}
+
+.specialization-item span {
+    font-size: 12px;
+    opacity: 0.75;
+}
+
+.coming-badge {
+    display: inline-block;
+    background: var(--gray-100);
+    color: var(--gray-500);
+    padding: 7px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+@media (max-width: 1000px) {
+    .interest-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .interest-page {
+        padding: 32px 20px;
+    }
+}
+
+/* ROADMAP REFINEMENT */
+.roadmap-hero {
+    padding: 32px 40px !important;
+    margin-bottom: 24px !important;
+}
+
+.roadmap-hero h2 {
+    font-size: 26px !important;
+    margin-bottom: 10px !important;
+}
+
+.roadmap-hero p {
+    font-size: 15px !important;
+    margin-bottom: 22px !important;
+}
+
+.roadmap-badge {
+    margin-bottom: 18px !important;
+}
+
+.roadmap-hero .progress-wrap {
+    max-width: 720px !important;
+    margin: 0 auto !important;
+}
+
+.roadmap-hero .progress-info {
+    font-size: 14px !important;
+    margin-bottom: 8px !important;
+}
+
+.roadmap-hero .progress-careon {
+    height: 8px !important;
+    border-radius: 999px !important;
+}
+
+.roadmap-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 18px !important;
+}
+
+.roadmap-step {
+    min-height: 150px !important;
+    padding: 24px !important;
+    border-radius: 18px !important;
+    align-items: flex-start !important;
+}
+
+.roadmap-step h3 {
+    font-size: 21px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 8px !important;
+}
+
+.roadmap-step p {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+}
+
+/* ROADMAP CARDS CLEANER */
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.roadmap-step {
+    background: white;
+    border-radius: 18px;
+    padding: 24px 26px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    min-height: 120px;
+}
+
+.step-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.roadmap-step h3 {
+    font-size: 20px;
+    line-height: 1.3;
+    margin: 0 0 6px;
+    color: var(--navy);
+}
+
+.roadmap-step p {
+    font-size: 14px;
+    margin: 0;
+    color: var(--gray-500);
+}
+
+.card-careon.mt-4 {
+    margin-top: 8px !important;
+}
+
+.card-careon.mt-4 .card-body {
+    padding: 24px !important;
+}
+
+.card-careon.mt-4 .section-title {
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+
+.card-careon.mt-4 .next-step-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.card-careon.mt-4 .next-step-item {
+    padding: 14px 16px;
+    font-size: 14px;
+    border-radius: 14px;
+}
+
 /* Responsive */
 @media (max-width: 992px) {
     .sidebar { transform: translateX(-100%); }
@@ -2465,7 +2815,7 @@ body.landing-layout {
 .fade-in-up:nth-child(4) { animation-delay: 0.2s; }
 
 #features {
-    scroll-margin-top: 80px;
+    scroll-margin-top: 98px;
 }
 
 #about {
